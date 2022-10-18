@@ -1,3 +1,4 @@
+# This python script trains our ML model
 from array import array
 from itertools import count
 from tkinter import Image
@@ -9,14 +10,25 @@ from sklearn.svm import LinearSVC
 class Model:
 
     def __init__(self):
+        """
+        Constructor
+        """
         self.model = LinearSVC()
     
     def train_model(self, counters):
+        """
+        training the model using Linear SVC
+        """
+        # initializing features array
         img_list = np.array([])
+
+        # initializing labels array
         class_list = np.array([])
 
         for i in range(1, counters[0]):
             img = cv2.imread(f"1/frame{i}.jpg")[:,:,0]
+
+            # the image by default has more width than height. Hence reshaping it into 1D array of size 16950 < 150*150 
             img = img.reshape(16950)
             img_list = np.append(img_list, [img])
             class_list = np.append(class_list, 1)
@@ -33,6 +45,9 @@ class Model:
         print("Model successfully trained!")
 
     def predict(self, frame):
+        """
+        performs predictions on the current frame
+        """
         frame = frame[1]
         cv2.imwrite("frame.jpg", cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY))
         img = PIL.Image.open("frame.jpg")
