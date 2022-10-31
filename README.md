@@ -2,6 +2,9 @@
 ## Overview
 The **AI Bicep Curls Counter** program counts the number of Bicep Curls as the trainer performs it in real time and displays it on the GUI screen along with the live camera recording of the trainer doing Bicep Curls. It uses Machine Learning to identify the "contracted" and "extended" positions of the arms when a trainer is performing Bicep Curls in front of the camera and counts accordingly.
 ## Graphical User Interface of the Program
+<p align="center"> 
+	<img src="./AI tkinter interface sc.png" height="300px">
+</p>
 The GUI consists of the following 4 buttons:
 - **Toggle Counting** - Pressing this button will allow the program to start counting the Bicep Curls of a trainer performing it in front of the camera.
 - **Extended** - Every time this button is pressed, the program will click and save the picture of the trainer as seen by the camera as "extended". Thus make sure to orient your arm in the extended position while clicking this button. These images will be used to train the model!
