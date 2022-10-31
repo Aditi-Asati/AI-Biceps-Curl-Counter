@@ -36,8 +36,8 @@ You can alternatively download the repository as a zip file using the GitHub **D
 *External modules used-*
 - Pillow
 - numpy
-- opencv_python
-- scikit_learn
+- opencv-python
+- scikit-learn
 
 
 Run the command ```pip install -r requirements.txt``` to install all these dependencies at once.
